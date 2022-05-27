@@ -4,5 +4,8 @@ import criterias from "../../../utils/datas/criterias";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") res.status(405).end();
-  res.status(200).json(criterias);
+  res.status(200).json({
+    message: "OK",
+    data: criterias
+  });
 }

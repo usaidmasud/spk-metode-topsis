@@ -12,8 +12,8 @@ const initialState: ICriteriaSlice = {
   loading: false,
 };
 
-export const fetchData = createAsyncThunk(
-  "users/fetchData",
+export const fetchCriteria = createAsyncThunk(
+  "users/fetchCriteria",
   async () => {
     const response = await instance.get(`/api/criteria`);
     return response.data;
@@ -30,15 +30,15 @@ export const criteriaSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchData.fulfilled, (state, action) => {
-        state.records = action.payload;
+      .addCase(fetchCriteria.fulfilled, (state, action) => {
+        state.records = action.payload.data;
         state.loading = false;
       })
-      .addCase(fetchData.rejected, (state, action) => {
+      .addCase(fetchCriteria.rejected, (state, action) => {
         state.records = [];
         state.loading = false;
       })
-      .addCase(fetchData.pending, (state, action) => {
+      .addCase(fetchCriteria.pending, (state, action) => {
         state.records = [];
         state.loading = true;
       });

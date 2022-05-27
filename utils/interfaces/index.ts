@@ -7,8 +7,12 @@ export interface ICriteria {
   type: TCriteriaType;
 }
 
+interface IPeopleValue {
+  codeCriteria: string;
+  value: number;
+}
 export interface IPeople {
   code: string;
   name: string;
-  value: number[];
+  value: IPeopleValue[]
 }

@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import instance from "../../../config/instance";
-import { ICriteria } from "../../interfaces";
+import { IPeople } from "../../interfaces";
 
 export interface ICriteriaSlice {
-  records: ICriteria[];
+  records: IPeople[];
   loading: boolean;
 }
 
 const initialState: ICriteriaSlice = {
   records: [],
-  loading:false
+  loading: false,
 };
 
-export const fetchData = createAsyncThunk("users/fetchData", async () => {
+export const fetchPeople = createAsyncThunk("users/fetchPeople", async () => {
   const response = await instance.get(`/api/people`);
   return response.data;
 });
@@ -21,28 +21,28 @@ export const peopleSlice = createSlice({
   name: "people",
   initialState,
   reducers: {
-    setLoading : (state, action : PayloadAction<boolean>) => {
+    setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchData.fulfilled, (state, action) => {
-        state.records = action.payload;
+      .addCase(fetchPeople.fulfilled, (state, action) => {
+        state.records = action.payload.data;
         state.loading = false;
       })
-      .addCase(fetchData.rejected, (state, action) => {
+      .addCase(fetchPeople.rejected, (state, action) => {
         state.records = [];
         state.loading = false;
       })
-      .addCase(fetchData.pending, (state, action) => {
+      .addCase(fetchPeople.pending, (state, action) => {
         state.records = [];
         state.loading = true;
       });
   },
 });
 
-export const { setLoading } = peopleSlice.actions
+export const { setLoading } = peopleSlice.actions;
 
 // Action creators are generated for each case reducer function
 
