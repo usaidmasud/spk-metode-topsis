@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+import instance from "../../../config/instance";
 import { ICriteria } from "../../interfaces";
 
 export interface ICriteriaSlice {
@@ -13,7 +13,7 @@ const initialState: ICriteriaSlice = {
 };
 
 export const fetchData = createAsyncThunk("users/fetchData", async () => {
-  const response = await axios.get(`${process.env.API_URL}/api/people`);
+  const response = await instance.get(`/api/people`);
   return response.data;
 });
 

@@ -15,11 +15,14 @@ const Criteria: React.FC = () => {
     <div className="table-responsive">
       <table className="table">
         <thead className="">
+          <tr>
+
           <th scope="col">#</th>
           <th scope="col">Code</th>
           <th scope="col">Name</th>
           <th scope="col">Value</th>
           <th scope="col">Type</th>
+          </tr>
         </thead>
         <tbody>
           {state.records.map((criteria, index) => (

@@ -5,8 +5,12 @@ import { Layout } from "../components/templates";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Criteria />
-      <People />
+      <section className="p-8">
+        <Criteria />
+      </section>
+      <section className="p-8">
+        <People />
+      </section>
     </Layout>
   );
 };

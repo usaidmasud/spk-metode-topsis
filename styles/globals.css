@@ -12,7 +12,7 @@
 .table > thead {
   @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
 }
-.table > thead > th {
+.table > thead > tr > th {
   @apply px-4 py-2;
 }
 .table > tbody > tr {
