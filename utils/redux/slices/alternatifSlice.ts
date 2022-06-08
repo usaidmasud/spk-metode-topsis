@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import instance from "../../../config/instance";
-import { IPeople } from "../../interfaces";
+import { IAlternatif } from "../../interfaces";
 
 export interface ICriteriaSlice {
-  records: IPeople[];
+  records: IAlternatif[];
   loading: boolean;
 }
 

@@ -7,12 +7,23 @@ export interface ICriteria {
   type: TCriteriaType;
 }
 
-interface IPeopleValue {
-  codeCriteria: string;
+export interface IProject {
+  id: number;
+  name: string;
+  date: Date;
+  status: boolean;
+}
+interface IAlternatifValue {
+  alternatif_id: string;
+  criteria_id: string;
   value: number;
 }
-export interface IPeople {
+
+export interface IAlternatif {
+  id: number;
   code: string;
   name: string;
-  value: IPeopleValue[]
+  project_id: number;
+  project: IProject;
+  values: IAlternatifValue[]
 }
