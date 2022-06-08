@@ -15,7 +15,7 @@ const initialState: ICriteriaSlice = {
 export const fetchCriteria = createAsyncThunk(
   "users/fetchCriteria",
   async () => {
-    const response = await instance.get(`/api/criteria`);
+    const response = await instance.get(`/topsis/criteria`);
     return response.data;
   }
 );
