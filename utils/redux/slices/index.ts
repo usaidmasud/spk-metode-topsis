@@ -1,7 +1,7 @@
+import alternatifSlice from './alternatifSlice';
 import criteriaSlice from './criteriaSlice';
-import peopleSlice from './peopleSlice';
 export {
   criteriaSlice,
-  peopleSlice
+  alternatifSlice
 };
 
