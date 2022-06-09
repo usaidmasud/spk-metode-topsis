@@ -51,7 +51,7 @@ const Layout2: React.FC<Props> = (props) => {
           </ul>
         </nav>
       </header>
-      <main className="flex-1 z-0">{props.children}</main>
+      <main className="overflow-auto w-full z-0">{props.children}</main>
     </div>
   );
 };
