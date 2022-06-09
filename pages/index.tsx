@@ -89,9 +89,9 @@ const Statistic2 = () => {
     <div className="bg-red-200 rounded-xl p-4 relative ">
       <div className="flex justify-between items-center">
         <div className="">
-          <h5 className="text-xl font-semibold">Sales</h5>
+          <h5 className="text-lg md:text-xl font-semibold">Sales</h5>
           <p className="text-sm text-gray-600">Total Sales Today</p>
-          <h3 className="text-3xl font-bold">$500</h3>
+          <h3 className="text-xl md:text-3xl font-bold">$500</h3>
         </div>
         <div className="">
           {/* <Circle
