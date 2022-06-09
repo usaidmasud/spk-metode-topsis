@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  @apply text-gray-800;
-}
+
 .table-responsive {
   @apply relative overflow-x-auto shadow-md sm:rounded-lg;
 }
