@@ -8,16 +8,20 @@ interface IMenu {
 }
 const Menu: React.FC<IMenu> = (props) => {
   return (
-    <li>
+    <li className="self-center md:self-start">
       <Link href={props.href}>
         <a
           className={`
-        flex gap-4 items-center text-lg text-gray-700 hover:font-semibold 
-        ${props.isActive ? "font-semibold text-primary-200 underline underline-offset-4" : ""}
+        flex gap-4 items-center text-base text-gray-800 hover:font-semibold 
+        ${
+          props.isActive
+            ? "font-semibold text-primary-200 underline underline-offset-4"
+            : ""
+        }
         `}
         >
           {props.icon}
-          {props.label}
+          <span className="hidden md:block">{props.label}</span>
         </a>
       </Link>
     </li>
