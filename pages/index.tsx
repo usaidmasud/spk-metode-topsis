@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { Circle } from "rc-progress";
 import {
   FiArrowDownRight,
   FiCompass,
@@ -95,12 +94,12 @@ const Statistic2 = () => {
           <h3 className="text-3xl font-bold">$500</h3>
         </div>
         <div className="">
-          <Circle
+          {/* <Circle
             className="w-16 h-16"
             percent={75}
             strokeWidth={8}
             strokeColor="#4E944F"
-          />
+          /> */}
         </div>
       </div>
       <div className="absolute top-2 right-2">
