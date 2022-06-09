@@ -34,7 +34,7 @@ const Project: NextPage = () => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.name}</td>
-                  <td><RenderStatus value={!item.status} /></td>
+                  <td><RenderStatus value={item.status} /></td>
                   <td>
                     <RenderButtonAction />
                   </td>
