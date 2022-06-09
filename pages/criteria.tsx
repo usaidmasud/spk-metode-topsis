@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { PageHeader, RenderBenefit, RenderButtonAction } from "../components/atoms";
 import { Layout } from "../components/templates";
 import { fetchCriteria } from "../utils/redux/slices/criteriaSlice";
 import { AppDispatch, RootState } from "../utils/redux/store";
@@ -14,32 +15,36 @@ const Criteria: NextPage = () => {
   }, [dispatch]);
   return (
     <Layout>
-      <section className="p-8">
+      <PageHeader title="Criteria">
         <div className="table-responsive">
           <table className="table">
-            <thead className="">
+            <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Code</th>
                 <th scope="col">Name</th>
                 <th scope="col">Value</th>
                 <th scope="col">Type</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               {state.records.map((criteria, index) => (
                 <tr key={index}>
-                  <td>{index + 1}</td>
+                  <td>{++index}</td>
                   <td>{criteria.code}</td>
                   <td>{criteria.name}</td>
                   <td>{criteria.value}</td>
-                  <td>{criteria.type}</td>
+                  <td><RenderBenefit type={criteria.type} /></td>
+                  <td>
+                    <RenderButtonAction />
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </section>
+      </PageHeader>
     </Layout>
   );
 };
