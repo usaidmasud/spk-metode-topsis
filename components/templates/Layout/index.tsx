@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { FiGift, FiHome, FiList, FiUser } from "react-icons/fi";
+import { Menu } from "../../atoms";
 interface Props {
   children: React.ReactNode;
 }
@@ -55,26 +56,4 @@ const Layout: React.FC<Props> = (props) => {
 
 export default Layout;
 
-interface IMenu {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-  isActive: boolean;
-}
-const Menu: React.FC<IMenu> = (props) => {
-  return (
-    <li>
-      <Link href={props.href}>
-        <a
-          className={`
-        flex gap-4 items-center text-lg text-gray-700 hover:font-semibold 
-        ${props.isActive ? "font-semibold text-primary-200 underline underline-offset-4" : ""}
-        `}
-        >
-          {props.icon}
-          {props.label}
-        </a>
-      </Link>
-    </li>
-  );
-};
+
