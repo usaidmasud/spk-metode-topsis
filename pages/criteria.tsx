@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PageHeader, RenderBenefit, RenderButtonAction } from "../components/atoms";
+import { Loading, PageHeader, RenderBenefit, RenderButtonAction } from "../components/atoms";
 import { Layout } from "../components/templates";
 import { fetchCriteria } from "../utils/redux/slices/criteriaSlice";
 import { AppDispatch, RootState } from "../utils/redux/store";
@@ -29,6 +29,7 @@ const Criteria: NextPage = () => {
               </tr>
             </thead>
             <tbody>
+            {state.loading && <Loading colSpan={6} />}
               {state.records.map((criteria, index) => (
                 <tr key={index}>
                   <td>{++index}</td>
