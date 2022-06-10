@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { Card, PageHeader } from "../components/atoms";
+import { Card, Loading, PageHeader } from "../components/atoms";
 import { Layout } from "../components/templates";
 import { numberFormat } from "../config/traits";
 import { fetchCalculation } from "../utils/redux/slices/calculationSlice";
@@ -30,6 +30,7 @@ const Calculation: NextPage = () => {
               </tr>
             </thead>
             <tbody>
+              {state.loading && <Loading colSpan={5} />}
               {state.getNiliaiPreferensi.map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
