@@ -1,11 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { alternatifSlice, criteriaSlice, projectSlice } from "./slices";
+import {
+  alternatifSlice,
+  calculationSlice,
+  criteriaSlice,
+  projectSlice
+} from "./slices";
 
 export const store = configureStore({
   reducer: {
     criteria: criteriaSlice,
     alternatif: alternatifSlice,
     project: projectSlice,
+    calculation: calculationSlice,
   },
 });
 

@@ -31,6 +31,12 @@ const Layout2: React.FC<Props> = (props) => {
               href="/"
             />
             <Menu
+              isActive={router.pathname === "/calculation"}
+              label="Calculation"
+              icon={<FiGift size={24} />}
+              href="/calculation"
+            />
+            <Menu
               isActive={router.pathname === "/alternatif"}
               label="Alternatif"
               icon={<FiUser size={24} />}
